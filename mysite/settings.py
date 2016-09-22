@@ -20,19 +20,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '9y^1565_%^4@v1qkq_fbg)t&c+041ejld9s5q#k*6aywemq%dt'
+SECRET_KEY = 'zg#8(ig(cjd82ps9#ch^v93hgg(abe@htdb9^spjkughupgw+5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
-# ALLOWED_HOSTS = ['*']
 
-AUTHENTICATION_BACKENDS = (
-    'oauth2_provider.backends.OAuth2Backend',
-    # Uncomment following if you want to access the admin
-    'django.contrib.auth.backends.ModelBackend'
-)
 
 # Application definition
 
@@ -43,9 +37,6 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blog',
-    'oauth2_provider',
-    'corsheaders'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -57,14 +48,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
-    # If you use SessionAuthenticationMiddleware, be sure it appears before OAuth2TokenMiddleware.
-    # SessionAuthenticationMiddleware is NOT required for using django-oauth-toolkit.
-    'oauth2_provider.middleware.OAuth2TokenMiddleware',
-
 )
-
-CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'mysite.urls'
 
